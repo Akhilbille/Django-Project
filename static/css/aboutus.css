@@ -1,0 +1,138 @@
+
+
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    line-height: 1.5;
+    font-family: 'Poppins',sans-serif;
+}
+
+body{
+    width: 100vw;
+    min-width: 100vw;
+    /*background-color: #ddd;*/
+
+}
+.about-us{
+    width: 100%;
+}
+
+.about-us h1{
+    text-align: center;
+    font-size: 40px;
+    color: dodgerblue;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-top: 50px;
+}
+
+.about-us h1::after{
+    content: "";
+    height: 5px;
+    width: 200px;
+    background-color: dodgerblue;
+    border-radius: 10px;
+    display: block;
+    margin: auto;
+}
+.about-us h1:hover{
+    text-align: center;
+    font-size: 40px;
+    color: blue;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-top: 50px;
+}
+
+
+.wrapper{
+    padding: 0px 60px;
+    margin: 60px auto;
+}
+
+.content{
+    width: 60%;
+    float: left;
+    text-align: left;
+    padding: 0px 30px;
+}
+.content h3{
+    color:#222;
+    letter-spacing: 1px;
+}
+
+.content p{
+    font-family: sans-serif;
+    font-size: 17px;
+    color:#3d3d3d;
+    margin-top: 20px;
+}
+.content .social{
+    margin-top: 15px;
+    margin-left: 15px;
+    text-align: center;
+   
+}
+
+.content .social a{
+    text-decoration:none;
+    color: dodgerblue;
+    font-size: 30px;
+}
+.content .social a:hover{
+    text-decoration:none;
+    color:blue;
+    font-size: 28px;
+    transition:1ms;
+}
+
+
+.image-section{
+    width:40%;
+    float:right;
+    padding: 0px 30px;
+}
+
+.image-section img{
+    max-width: 80%;
+    height: auto;
+}
+
+
+@media screen and (max-width:900px)  {
+    .about-us h1{
+        font-size: 32px;
+
+    }
+    body{
+        width: 100vw;
+    }
+    .content{
+        width:100%;
+        float:none;
+
+    }
+    .content .social {
+        margin-top: 30px;
+        text-align:center;
+    }
+    .image-section{
+        float: none;
+        width: 100vw;
+        margin-top: 25px;
+    }
+
+
+    p{
+        text-align: justify;
+        font-size: 0.5rem;
+    }
+    .wrapper{
+        width: 100vw;
+        height: 100vh;
+
+    }
+    
+}
+

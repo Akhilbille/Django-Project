@@ -1,0 +1,88 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <title>Authentication Details</title>
+    <style>
+
+        .box{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+             height: 100vh;
+             align-items: center;
+            background: linear-gradient(white,dodgerblue);
+        }
+        .box1{
+            width:80vw;
+            height: 50vh;
+            background-color: white;
+            border-radius: 1rem;
+
+
+
+        }
+        h1{
+            text-align: center;
+            margin: 8px;
+            color: green;
+            text-decoration: green underline;
+        }
+        .content{
+            color: darkslategray;
+            font-family: "Poppins", Arial, sans-serif;
+            margin: 5rem 1rem 5rem 1.5rem;
+            font-size: 1.8rem;
+            text-align: center;
+
+        }
+        h5{
+            text-decoration: green underline;
+        }
+        @media (min-width:600px)  {
+            .box1{
+            width:80vw;
+            height: 70vh;
+            background-color: white;
+            border-radius: 1rem;
+
+
+
+        }
+
+        }
+
+    </style>
+</head>
+<body>
+<div class="box">
+
+
+            <div class="box1">
+        <h1>Payment Success</h1>
+        <div class="content">
+           <h2>Thank You for your Registration.</h2>
+        </div>
+
+        <div class="bg-warning" style="margin: 1rem;padding: 0.5rem;border-radius: 5px">
+              <h6>Note: </h6>
+            <input type="tel" name="phone" style="display: none" value="{{ phone }}">
+        <p style="font-weight: bold;margin-left: 4rem;"> Please Complete Your Registration Process by clicking SignUp Button</p>
+        </div>
+             <div class="text-center">
+                 <a href="/signup"><button type="button" class="btn btn-outline-dark btn-lg" >SignUp</button></a>
+  </div>
+
+
+
+
+
+    </div>
+
+</div>
+
+
+</body>
+</html>

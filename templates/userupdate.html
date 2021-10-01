@@ -1,0 +1,757 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+    <link href="{%static 'img/employee.png' %}" rel="icon">
+	<title>SignUp</title>
+    <script src="https://kit.fontawesome.com/a1f3682286.js" crossorigin="anonymous"></script>
+	<!-- Mobile Specific Metas -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- Font-->
+	<link rel="stylesheet" type="text/css" href="{%static 'css/signup-montserrat-font.css' %}">
+	<link rel="stylesheet" type="text/css" href="{%static 'fonts/material-design-iconic-font/css/material-design-iconic-font.min.css' %}">
+
+    <!-- Main Style Css -->
+    <link rel="stylesheet" href="{% static 'css/signup.css'%}"/>
+      <style>
+        .center-payment {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+
+</head>
+<body class="form-v10">
+	<!-- Personal details -->
+	<div class="page-content">
+		<div class="form-v10-content">
+			<form class="form-detail" style="" action="/home/profile-update" method="post" id="myform">
+            {% csrf_token %}
+
+
+
+				<div class="form-left">
+                       <div class="form-row">
+						     {% for message in messages %}
+                                <ul>
+                                    <li style="color: green;list-style-type: none"><b>{{ message }}</b></li>
+                                </ul>
+                             {% endfor %}
+
+					</div>
+					<h2>Personal Details</h2>
+                    {#First name and last name#}
+
+						<div class="form-row ">
+							<input type="text" name="first_name" id="first_name" class="input-text"  placeholder="First Name" >
+						</div>
+						<div class="form-row ">
+							<input type="text" name="last_name" id="last_name" class="input-text"  placeholder="Last Name" >
+						</div>
+
+
+{##}
+                    {# Gender#}
+					<div class="form-row">
+                        <input type="text" list="Gender" id="gender"   placeholder="Gender" name="gender">
+						<datalist id="Gender" >
+						    <option name="Male">Male</option>
+						    <option name="Female">Female</option>
+						    <option name="Others">Others</option>
+						</datalist>
+
+					</div>
+{##}
+                 {#Date of birth#}
+{##}
+{#                        <div class="form-row ">#}
+{#                           <p>Data of Birth <i class="fa fa-angle-down" ></i></p>#}
+{#                    </div>#}
+{#                    <div class="form-row ">#}
+{#                        <input type="date" width="20px"   id="dob" placeholder="Date of Birth" >#}
+{##}
+{#                    </div>#}
+               <div class="form-row">
+                    <input type="text" name="dateofbirth"  placeholder="Date of Birth"
+                    onfocus="(this.type='date')">
+
+               </div>
+
+
+
+
+{##}
+{#                    <div class="form-row ">#}
+{#							<input type="tel" name="phone" class="phone" id="phone"  required pattern="[6-9]{1}[0-9]{9}"  placeholder="Phone Number" >#}
+{#                    </div>#}
+
+{##}
+					<div class="form-row">
+						<input type="email" name="email" id="email" class="input-text"  pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}"  placeholder="Email">
+					</div>
+
+
+                    <div class="form-row">
+						<input type="text" name="Adhaarnumber" class="Adhaarnumber" id="Adhaarnumber"   pattern="[0-9]{12}" placeholder="Adhaar Number" >
+					</div>
+
+{#                        Native place#}
+					<div class="form-row">
+                        <input  list="native" name="native" type="text"   placeholder="Native Place ">
+						<datalist id="native" >
+
+                            <option value="Andhra Pradesh">
+                            <option value="Outside of Andhra Pradesh">
+
+
+						</datalist>
+
+					</div>
+{##}
+{##}
+                {#Password and repeat password#}
+{#					<div class="form-group">#}
+{#						<div class="form-row form-row-1">#}
+{#							<input type="password" id="password1" name="password" required class="password" placeholder="Password"  >#}
+{#						</div>#}
+{#						<div class="form-row form-row-2">#}
+{#							<input type="password"  id="password2" name="password2" required class="password" placeholder="Repeat Password"  >#}
+{#						</div>#}
+{#					</div>#}
+{##}
+
+
+            {#Designation#}
+				</div>
+
+				<!-- Professional details -->
+				<div class="form-right">
+					<h2>Professional Details</h2>
+
+
+
+
+					<div class="form-row">
+						<input type="text" name="designation_name" class="designation"    id="designation" placeholder="Designation"  >
+					</div>
+
+                    <div class="form-row">
+
+                                <input list="qualification" name="qualification" id="qualification-list" placeholder='Qualification'  name="qualification"   />
+
+                                <datalist id="qualification" >
+                                    {% for qualification in qualification_lists %}
+                                    <option value={{ qualification|slugify|upper }}>
+                                    {% endfor %}
+
+                                </datalist>
+
+
+					</div>
+
+                   {#occupation_lists#}
+					<div class="form-row">
+						<input list="occupations" id="occupation" placeholder='Occupations'  name="occupation"  />
+
+                              <datalist id="occupations" >
+                                    {% for occupation in occupation_lists %}
+                                    <option value={{ occupation|slugify|upper}}>
+                                    {% endfor %}
+
+                                </datalist>
+					</div>
+
+                   {#state_select_lists#}
+					<div class="form-row">
+						<input list="state-select-list"   id="state-select" placeholder='Select'  name="selectList"  />
+
+                              <datalist id="state-select-list" >
+                                    {% for state in state_select %}
+                                    <option value={{ state|slugify|title}}>
+                                    {% endfor %}
+
+                                </datalist>
+					</div>
+
+                {#central_select_lists#}
+	<div class="form-row">
+						<input list="central-select-list" id="central-select" placeholder='Select'  name="selectList"  />
+
+                              <datalist id="central-select-list" >
+                                    {% for central in central_select %}
+                                    <option value={{ central|slugify|title}}>
+                                    {% endfor %}
+
+                                </datalist>
+					</div>
+
+                {#private_select_lists#}
+	<div class="form-row">
+						<input list="private-select-list" id="private-select" placeholder='Select'  name="selectList"  />
+
+                              <datalist id="private-select-list" >
+                                    {% for private in private_select %}
+                                    <option value={{ private|slugify|title}}>
+                                    {% endfor %}
+
+                                </datalist>
+					</div>
+
+                {#others_select_lists#}
+	<div class="form-row">
+						<input list="other-select-list" id="other-select" placeholder='Select'  name="selectList"  />
+
+                              <datalist id="other-select-list" >
+                                    {% for other in others_select %}
+                                    <option value={{ other|slugify|title}}>
+                                    {% endfor %}
+
+                                </datalist>
+					</div>
+
+
+
+
+                    {#organization#}
+					<div class="form-row">
+						 <input list="organisations" id="organisations-list" placeholder='Organisations'  formnovalidate  name="organisation"  />
+
+                              <datalist id="organisations" >
+                                    {% for organisation in organisations_lists %}
+                                    <option value={{ organisation|slugify|title }}>
+                                    {% endfor %}
+
+                                </datalist>
+
+					</div>
+
+                {#deapartments#}
+			     {#deapartments#}
+                <div class="form-row">
+                    <input list="departments" id="departments-list" placeholder='Departments' name="department"/>
+
+                    <datalist id="departments">
+                        {% for department in Agriculture_and_Co_operation %}
+                            <option value={{ department|slugify|title }}>
+                        {% endfor %}
+
+                    </datalist>
+                </div>
+               <div class="form-row">
+                    <input list="departments1" id="departments-list1" placeholder='Departments' name="department"/>
+
+                    <datalist id="departments1">
+                        {% for department in Animal_Husbandry_and_Fisheries %}
+                            <option value={{ department|slugify|title }}>
+                        {% endfor %}
+
+                    </datalist>
+                </div>
+            <div class="form-row">
+                    <input list="departments2" id="departments-list2" placeholder='Departments' name="department"/>
+
+                    <datalist id="departments2">
+                        {% for department in Backward_Classes_Welfare %}
+                            <option value={{ department|slugify|title }}>
+                        {% endfor %}
+
+                    </datalist>
+                </div>
+             <div class="form-row">
+                    <input list="departments3" id="departments-list3" placeholder='Departments' name="department"/>
+
+                    <datalist id="departments3">
+                        {% for department in Consumer_Affairs_Food_Civil_Supplies %}
+                            <option value={{ department|slugify|title }}>
+                        {% endfor %}
+
+                    </datalist>
+                </div>
+
+              <div class="form-row">
+                    <input list="departments4" id="departments-list4" placeholder='Departments' name="department"/>
+
+                    <datalist id="departments4">
+                        {% for department in Department_for_Women_Children_Disabled_and_Senior_Citizens %}
+                            <option value={{ department|slugify|title }}>
+                        {% endfor %}
+
+                    </datalist>
+                </div>
+
+            <div class="form-row">
+                    <input list="departments5" id="departments-list5" placeholder='Departments' name="department"/>
+
+                    <datalist id="departments5">
+                        {% for department in Environment_Forests_Science_and_Technology %}
+                            <option value={{ department|slugify|title }}>
+                        {% endfor %}
+
+                    </datalist>
+                </div>
+             <div class="form-row">
+                    <input list="departments6" id="departments-list6" placeholder='Departments' name="department"/>
+
+                    <datalist id="departments6">
+                        {% for department in Finance %}
+                            <option value={{ department|slugify|title }}>
+                        {% endfor %}
+
+                    </datalist>
+                </div>
+            <div class="form-row">
+                    <input list="departments7" id="departments-list7" placeholder='Departments' name="department"/>
+
+                    <datalist id="departments7">
+                        {% for department in General_Administration %}
+                            <option value={{ department|slugify|title }}>
+                        {% endfor %}
+
+                    </datalist>
+                </div>
+
+              <div class="form-row">
+                    <input list="departments8" id="departments-list8" placeholder='Departments' name="department"/>
+
+                    <datalist id="departments8">
+                        {% for department in Health_Medical_Family_Welfare %}
+                            <option value={{ department|slugify|title }}>
+                        {% endfor %}
+
+                    </datalist>
+                </div>
+             <div class="form-row">
+                    <input list="departments9" id="departments-list9" placeholder='Departments' name="department"/>
+
+                    <datalist id="departments9">
+                        {% for department in Higher_Education %}
+                            <option value={{ department|slugify|title }}>
+                        {% endfor %}
+
+                    </datalist>
+                </div>
+
+             <div class="form-row">
+                    <input list="departments10" id="departments-list10" placeholder='Departments' name="department"/>
+
+                    <datalist id="departments10">
+                        {% for department in Home %}
+                            <option value={{ department|slugify|title }}>
+                        {% endfor %}
+
+                    </datalist>
+                </div>
+      <div class="form-row">
+                    <input list="departments11" id="departments-list11" placeholder='Departments' name="department"/>
+
+                    <datalist id="departments11">
+                        {% for department in Housing  %}
+                            <option value={{ department|slugify|title }}>
+                        {% endfor %}
+
+                    </datalist>
+                </div>
+
+      <div class="form-row">
+                    <input list="departments12" id="departments-list12" placeholder='Departments' name="department"/>
+
+                    <datalist id="departments12">
+                        {% for department in Industries_and_Commerce %}
+                            <option value={{ department|slugify|title }}>
+                        {% endfor %}
+
+                    </datalist>
+                </div>
+
+                  <div class="form-row">
+                    <input list="departments13" id="departments-list13" placeholder='Departments' name="department"/>
+
+                    <datalist id="departments13">
+                        {% for department in Information_Technology_Electronics_Communications %}
+                            <option value={{ department|slugify|title }}>
+                        {% endfor %}
+
+                    </datalist>
+                </div>
+               <div class="form-row">
+                    <input list="departments14" id="departments-list14" placeholder='Departments' name="department"/>
+
+                    <datalist id="departments14">
+                        {% for department in  Energy %}
+                            <option value={{ department|slugify|title }}>
+                        {% endfor %}
+
+                    </datalist>
+                </div>
+               <div class="form-row">
+                    <input list="departments15" id="departments-list15" placeholder='Departments' name="department"/>
+
+                    <datalist id="departments15">
+                        {% for department in Minorities_Welfare %}
+                            <option value={{ department|slugify|title }}>
+                        {% endfor %}
+
+                    </datalist>
+                </div>
+               <div class="form-row">
+                    <input list="departments16" id="departments-list16" placeholder='Departments' name="department"/>
+
+                    <datalist id="departments16">
+                        {% for department in  Municipal_Administration_Urban_Development %}
+                            <option value={{ department|slugify|title }}>
+                        {% endfor %}
+
+                    </datalist>
+                </div>
+               <div class="form-row">
+                    <input list="departments17" id="departments-list17" placeholder='Departments' name="department"/>
+
+                    <datalist id="departments17">
+                        {% for department in  Panchayat_Raj_and_Rural_Development%}
+                            <option value={{ department|slugify|title }}>
+                        {% endfor %}
+
+                    </datalist>
+                </div>
+               <div class="form-row">
+                    <input list="departments18" id="departments-list18" placeholder='Departments' name="department"/>
+
+                    <datalist id="departments18">
+                        {% for department in Planning %}
+                            <option value={{ department|slugify|title }}>
+                        {% endfor %}
+
+                    </datalist>
+                </div>
+               <div class="form-row">
+                    <input list="departments19" id="departments-list19" placeholder='Departments' name="department"/>
+
+                    <datalist id="departments19">
+                        {% for department in Public_Enterprises %}
+                            <option value={{ department|slugify|title }}>
+                        {% endfor %}
+
+                    </datalist>
+                </div>   <div class="form-row">
+                    <input list="departments20" id="departments-list20" placeholder='Departments' name="department"/>
+
+                    <datalist id="departments20">
+                        {% for department in Revenue %}
+                            <option value={{ department|slugify|title }}>
+                        {% endfor %}
+
+                    </datalist>
+                </div>
+               <div class="form-row">
+                    <input list="departments21" id="departments-list21" placeholder='Departments' name="department"/>
+
+                    <datalist id="departments21">
+                        {% for department in School_Education %}
+                            <option value={{ department|slugify|title }}>
+                        {% endfor %}
+
+                    </datalist>
+                </div>
+               <div class="form-row">
+                    <input list="departments22" id="departments-list22" placeholder='Departments' name="department"/>
+
+                    <datalist id="departments22">
+                        {% for department in Department_of_Skills_Development_and_Training %}
+                            <option value={{ department|slugify|title }}>
+                        {% endfor %}
+
+                    </datalist>
+                </div>   <div class="form-row">
+                    <input list="departments23" id="departments-list23" placeholder='Departments' name="department"/>
+
+                    <datalist id="departments23">
+                        {% for department in Social_Welfare %}
+                            <option value={{ department|slugify|title }}>
+                        {% endfor %}
+
+                    </datalist>
+                </div>   <div class="form-row">
+                    <input list="departments24" id="departments-list24" placeholder='Departments' name="department"/>
+
+                    <datalist id="departments24">
+                        {% for department in Transport_Roads_and_Buildings  %}
+                            <option value={{ department|slugify|title }}>
+                        {% endfor %}
+
+                    </datalist>
+                </div>
+               <div class="form-row">
+                    <input list="departments25" id="departments-list25" placeholder='Departments' name="department"/>
+
+                    <datalist id="departments25">
+                        {% for department in Water_Resources  %}
+                            <option value={{ department|slugify|title }}>
+                        {% endfor %}
+
+                    </datalist>
+                </div>
+               <div class="form-row">
+                    <input list="departments26" id="departments-list26" placeholder='Departments' name="department"/>
+
+                    <datalist id="departments26">
+                        {% for department in Youth_Advancement_Tourism_and_Culture %}
+                            <option value={{ department|slugify|title }}>
+                        {% endfor %}
+
+                    </datalist>
+                </div>
+               <div class="form-row">
+                    <input list="departments27" id="departments-list27" placeholder='Departments' name="department"/>
+
+                    <datalist id="departments27">
+                        {% for department in Labour_Factories_Boilers_Insurance_Medical_Services_Department %}
+                            <option value={{ department|slugify|title }}>
+                        {% endfor %}
+
+                    </datalist>
+                </div>
+                          <div class="form-row">
+                    <input list="departments28" id="departments-list28" placeholder='Departments' name="department"/>
+
+                    <datalist id="departments28">
+                        {% for department in Law %}
+                            <option value={{ department|slugify|title }}>
+                        {% endfor %}
+
+                    </datalist>
+                </div>
+
+{#office_levels#}
+					<div class="form-row">
+						<input list="office_levels" id="office_level" placeholder='Office Level'  name="officeLevel_name"  />
+
+                              <datalist id="office_levels" >
+                                    {% for office_level in office_level_lists %}
+                                    <option value={{ office_level|slugify|title}}>
+                                    {% endfor %}
+
+                                </datalist>
+					</div>
+	            <div class="form-row">
+						 <input id="office-location" value="Amaravati" readonly  name="office_name" />
+					</div>
+
+
+
+                     <div class="form-row">
+						<input type="text" name="organisation_central"  id="organization" placeholder="Organisation" >
+					</div>
+
+
+
+                {#districts#}
+
+						<div class="form-row">
+
+                                <input list="districts" id="district" placeholder='Districts'  name="district_name"  />
+
+                                <datalist id="districts" >
+                                    {% for district in districts_lists %}
+                                    <option value={{ district|slugify|title }}>
+                                    {% endfor %}
+
+                                </datalist>
+
+                        </div>
+                  <div class="form-row">
+							 <input list="anantapur_constituency" id="anantapur_constituency-list"  data-model-name="constituency" placeholder='Constituency'  name="constituency_name"  />
+
+                                <datalist id="anantapur_constituency" >
+                                    {% for constituency in anantapur_constituency %}
+                                    <option value={{ constituency }}>
+                                    {% endfor %}
+
+                                </datalist>
+						</div>
+
+
+                    <div class="form-row">
+							 <input list="chitoor_constituency" id="chitoor_constituency-list"  data-model-name="constituency" placeholder='Constituency'  name="constituency_name"  />
+
+                                <datalist id="chitoor_constituency" >
+                                    {% for constituency in chitoor_constituency %}
+                                    <option value={{ constituency }}>
+                                    {% endfor %}
+
+                                </datalist>
+						</div>
+                    <div class="form-row">
+							 <input list="east_godavari_constituency" id="east_godavari_constituency-list"  data-model-name="constituency" placeholder='Constituency'  name="constituency_name"  />
+
+                                <datalist id="east_godavari_constituency" >
+                                    {% for constituency in east_godavari_constituency %}
+                                    <option value={{ constituency }}>
+                                    {% endfor %}
+
+                                </datalist>
+						</div>
+                       <div class="form-row">
+							 <input list="guntur_constituency" id="guntur_constituency-list"  data-model-name="constituency" placeholder='Constituency'  name="constituency_name"  />
+
+                                <datalist id="guntur_constituency" >
+                                    {% for constituency in guntur_constituency %}
+                                    <option value={{ constituency }}>
+                                    {% endfor %}
+
+                                </datalist>
+						</div>
+                       <div class="form-row">
+							 <input list="kadapa_constituency" id="kadapa_constituency-list"  data-model-name="constituency" placeholder='Constituency'  name="constituency_name"  />
+
+                                <datalist id="kadapa_constituency" >
+                                    {% for constituency in kadapa_constituency %}
+                                    <option value={{ constituency }}>
+                                    {% endfor %}
+
+                                </datalist>
+						</div>
+                       <div class="form-row">
+							 <input list="krishna_constituency" id="krishna_constituency-list"  data-model-name="constituency" placeholder='Constituency'  name="constituency_name"  />
+
+                                <datalist id="krishna_constituency" >
+                                    {% for constituency in krishna_constituency %}
+                                    <option value={{ constituency }}>
+                                    {% endfor %}
+
+                                </datalist>
+						</div>
+                       <div class="form-row">
+							 <input list="kurnool_constituency" id="kurnool_constituency-list"  data-model-name="constituency" placeholder='Constituency'  name="constituency_name"  />
+
+                                <datalist id="kurnool_constituency" >
+                                    {% for constituency in kurnool_constituency %}
+                                    <option value={{ constituency }}>
+                                    {% endfor %}
+
+                                </datalist>
+						</div>
+                       <div class="form-row">
+							 <input list="nellore_constituency" id="nellore_constituency-list"  data-model-name="constituency" placeholder='Constituency'  name="constituency_name"  />
+
+                                <datalist id="nellore_constituency" >
+                                    {% for constituency in nellore_constituency %}
+                                    <option value={{ constituency }}>
+                                    {% endfor %}
+
+                                </datalist>
+						</div>
+                       <div class="form-row">
+							 <input list="prakasam_constituency" id="prakasam_constituency-list"  data-model-name="constituency" placeholder='Constituency'  name="constituency_name"  />
+
+                                <datalist id="prakasam_constituency" >
+                                    {% for constituency in prakasam_constituency %}
+                                    <option value={{ constituency }}>
+                                    {% endfor %}
+
+                                </datalist>
+						</div>
+                    <div class="form-row">
+							 <input list="srikakulam_constituency" id="srikakulam_constituency-list"  data-model-name="constituency" placeholder='Constituency'  name="constituency_name"  />
+
+                                <datalist id="srikakulam_constituency" >
+                                    {% for constituency in srikakulam_constituency %}
+                                    <option value={{ constituency }}>
+                                    {% endfor %}
+
+                                </datalist>
+						</div>
+                    <div class="form-row">
+							 <input list="vishakhapatnam_constituency" id="vishakhapatnam_constituency-list"  data-model-name="constituency" placeholder='Constituency'  name="constituency_name"  />
+
+                                <datalist id="vishakhapatnam_constituency" >
+                                    {% for constituency in vishakhapatnam_constituency %}
+                                    <option value={{ constituency }}>
+                                    {% endfor %}
+
+                                </datalist>
+						</div>
+                    <div class="form-row">
+							 <input list="vizianagaram_constituency" id="vizianagaram_constituency-list"  data-model-name="constituency" placeholder='Constituency'  name="constituency_name"  />
+
+                                <datalist id="vizianagaram_constituency" >
+                                    {% for constituency in vizianagaram_constituency %}
+                                    <option value={{ constituency }}>
+                                    {% endfor %}
+
+                                </datalist>
+						</div>
+                    <div class="form-row">
+							 <input list="west_godavari_constituency" id="west_godavari_constituency-list"  data-model-name="constituency" placeholder='Constituency'  name="constituency_name"  />
+
+                                <datalist id="west_godavari_constituency" >
+                                    {% for constituency in west_godavari_constituency %}
+                                    <option value={{ constituency }}>
+                                    {% endfor %}
+
+                                </datalist>
+						</div>
+
+
+
+
+
+						<div class="form-row">
+						 <input list="mandal" id="mandalList" placeholder='Mandal'   name="mandalList_name" />
+
+                                <datalist id="mandal" >
+                                     {% for mandal in mandals_list %}
+                                    <option value={{ mandal }}>
+                                    {% endfor %}
+
+                                </datalist>
+						</div>
+
+						<div class="form-row">
+							 <input list="panchayath" id="panchayathList" placeholder='Panchayat'  name="panchayath_name" />
+
+                                <datalist id="panchayath" >
+                                    {% for panchayath in panchayath_lists %}
+                                    <option value={{ panchayath|slugify|title }}>
+                                    {% endfor %}
+
+                                </datalist>
+						</div>
+
+
+					
+
+					<div class="form-row">
+						 <input id="v-list" placeholder='Village'  name="village_name" />
+					</div>
+
+
+
+
+
+
+					<div class="form-row-last">
+						<button class="register" id="rzp-button1" style="height: 2rem" type="submit">Update</button>
+
+					</div>
+
+
+
+
+
+
+
+				</div>
+			</form>
+		</div>
+	</div>
+ <!-- Script-->
+    <script src="{% static 'js_folder/signup-main.js' %}"></script>
+</body>
+</html>
+
+
+

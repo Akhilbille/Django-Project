@@ -1,0 +1,182 @@
+{% load static %}
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="author" content="Yinka Enoch Adedokun">
+	<title>Login</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+      <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Montserrat:300,400,500,700" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{%static 'vendor/aos/aos.css' %}" rel="stylesheet">
+  <link href="{%static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{%static 'vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{%static 'vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{%static 'vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <!-- Template Main CSS File -->
+
+{#        {%static 'login.css' %}#}
+    <script src="https://kit.fontawesome.com/a1f3682286.js" crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="{% static 'css/loginstyle.css' %}">
+     <link href="{%static 'css/landingpage.css' %}" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+        body{
+
+            background: whitesmoke;
+        }
+        ul li.active a{
+            color: #0a53be;
+        }
+    </style>
+</head>
+<body >
+ {# Navbar #}
+     <header id="header" class="fixed-top d-flex align-items-center">
+    <div class="container d-flex justify-content-between">
+
+      <div class="logo">
+        <!-- Uncomment below if you prefer to use an text logo -->
+
+        <a href="/"><h3 style="margin-top: 15px;font-family: 'Righteous', cursive;"><span><i class="fas fa-database"></i></span> &nbsp;{{ 'AP Citizen Portal' | upper }}</h3></a>
+      </div>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link " href="/">Home</a></li>
+          <li><a class="nav-link " href="about">About US</a></li>
+          <li><a class="nav-link " href="contact">Contact Us</a></li>
+                  <li class="dropdown"><a href="#"><span>Register</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+                <li><a class="nav-link " href="payment">Payment</a></li>
+                <li><a class="nav-link " href="/authentication">Sign up</a></li>
+
+            </ul>
+          </li>
+            <li><a class="nav-link " href="login">Login</a></li>
+        </ul>
+
+          <span style="margin-top: 10px"><i class="bi bi-list mobile-nav-toggle"></i></span>
+        </nav><!-- .navbar -->
+
+      </div>
+    </header>
+    <br><br>
+  {# Navbar #}
+	<!-- Main Content -->
+	<div class="container-fluid" >
+		<div class="row main-content  text-center">
+			<div class="col-md-4 text-center company__info">
+				<span><i class="fas fa-user-tie" style="font-size: 60px"></i></span>
+				<h4 class="company_title">AP Citizen Portal</h4>
+			</div>
+			<div class="col-md-8 col-xs-12 col-sm-12 login_form ">
+				<div class="container-fluid">
+					<div class="row">
+						<h1 class="heading-section  text-center " style="color: dodgerblue;">Login</h1>
+					</div>
+					<div class="row">
+						<form  class="form-group" action="login" method="POST">
+                            {% csrf_token %}
+							<div class="row">
+								<input type="text" name="username" id="username" class="form__input" placeholder="Mobile Number">
+							</div>
+							<div class="row">
+								<!-- <span class="fa fa-lock"></span> -->
+								<input type="password" name="password" id="password" class="form__input" placeholder="Password">
+							</div>
+							    {% for message in messages %}
+                                <ul>
+                                    <li  style="list-style: none ;color: orange" class="errors"><b>{{ message }}</b></li>
+                                </ul>
+                             {% endfor %}
+							<div class="text-center">
+								<input type="submit" value="Submit" class="btn">
+							</div>
+						</form>
+					</div>
+                <div class="row">
+						<p><a href="forgotpassword">Forgot Password? </a></p>
+					</div>
+
+					<div class="row">
+						<p>Need to Go Home!  <a href="/">Home</a></p>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+                           <div class="container-fluid text-center footer" style="margin-bottom: 100px">
+		Powered by &hearts; <a href="http://www.digibrainsacademy.com/" target="_blank">Digi Brains.</a></p>
+	</div>
+
+	</div>
+	<!-- Footer -->
+   <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="footer-top" >
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-6 col-md-6 footer-info" style="text-align: center">
+            <h5><b>AP Citizen Portal</b></h5>
+            <p >We are here to provide you the best guidance regarding AP Govt Employee Jobs details. </p>
+          </div>
+
+          <div class="col-lg-6 col-md-6  footer-contact" style="text-align: center">
+            <h5><b>Contact Us</b></h5>
+           <div >
+                <p >
+             DIGI BRAINS ACADEMY <br>
+              Anantapur<br>
+              Andhra Pradesh <br>
+              <strong>Phone:</strong> 1234567890<br>
+              <strong>Email:</strong> dba@gmail.com<br>
+            </p>
+           </div>
+
+            <div class="social-links">
+              <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+              <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+              <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+
+              <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+            </div>
+
+          </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </footer>
+<!-- End Footer -->
+
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="{%static 'vendor/aos/aos.js' %}"></script>
+  <script src="{%static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{%static 'vendor/glightbox/js/glightbox.min.js' %}"></script>
+  <script src="{%static 'vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+  <script src="{%static 'vendor/php-email-form/validate.js' %}"></script>
+  <script src="{%static 'vendor/purecounter/purecounter.js' %}"></script>
+  <script src="{%static 'vendor/swiper/swiper-bundle.min.js' %}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{%static 'js_folder/main.js' %}"></script>
+
+
+
+</body>
+</html>

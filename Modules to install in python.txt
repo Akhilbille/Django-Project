@@ -1,0 +1,28 @@
+Modules to be installed
+pip install virtualenvwrapper-win
+{
+	lsvirtualenv
+	mkvirtualenv
+	rmvirtualenv
+	workon env_name
+	deavtivate
+}
+
+pip install django
+pip install os-win
+
+
+DataBases :
+pip install mysqlclient
+
+
+Images:
+pip install pillow
+
+
+icons
+https://www.google.com/search?q=government%20employee%20portal%20icons&tbm=isch&tbs=rimg:CQNlEzPtoBN6YZxzeDv-wzes&hl=en&sa=X&ved=0CBwQuIIBahcKEwjA9OCslfHxAhUAAAAAHQAAAAAQAg&biw=1349&bih=657
+
+
+payment:
+pip install razorpay

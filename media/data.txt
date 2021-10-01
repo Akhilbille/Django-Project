@@ -1,0 +1,121 @@
+  list_organisations = ['Organization','Agriculture and Co-operation', 'Animal Husbandry and Fisheries', 'Backward Classes Welfare',
+                           'Consumer Affairs Food & Civil Supplies', 'Department For Women Children Disabled and Senior Citizens',
+                           'Environment,Forests,Science and Technology',
+                           'Finance', 'General Administration', 'Health,Medical & Family Welfare',
+                           'Higher Education', 'Home', 'Housing', 'Industries and Commerce', 'Information Technology,Electronics & Communications',
+                           'Energy','Labour,Factories,Boilers & Insurance Medical Services Department', 'Law', 'Minorities Welfare',
+                           'Municipal Administration& Urban Development', 'Panchayat Raj and Rural Development',
+                           'Planning', 'Public Enterprises', 'Revenue', 'School Education',
+                           'Department of Skills Development and Training', 'Social Welfare', 'Transport,Roads and Buildings',
+                           'Water Resources', 'Youth Advancement,Tourism and Culture']
+
+
+
+     office_level=['Office Level','State Headquarters','District Headquarters','Constituency Headquarters','Mandal Headquarters','Panchayat Headquarters','Village Headquarters']
+
+
+
+
+     districts=['District','Anantapur', 'Chittoor', 'East Godavari', 'Guntur', 'Kadapa', 'Krishna', 'Kurnool', 'Nellore', 'Prakasam',  'Srikakulam', 'Visakhapatnam', 'Vizianagaram', 'West Godavari']
+
+
+________________________________________Constituencies________________________________________________________________________
+
+anantapur_constituency = ['Anantapur Urban', 'Dharmavaram', 'Guntakal', 'Hindupur', 'Kadiri', 'Kalyandurg', 'Madakasira', 'Penukonda', 'Puttaparthi', 'Raptadu', 'Rayadurg', 'Singanamala', 'Tadpatri', 'Uravakonda'] 
+
+
+chitoor_constituency =  ['CHANDRAGIRI', 'CHITTOOR', 'GANGADHARA NELLORE', 'KUPPAM', 'MADANAPALLE', 'NAGARI', 
+'PALAMANER', 'PILERU', 'PUNGANUR', 'PUTHALAPATTU', 'SATYAVEDU', 'SRIKALAHASTI', 'THAMBALLAPALLE', 'TIRUPATI']
+
+east_godavari_constituency = ['AMALAPURAM', 'ANAPARTHY', 'GANNAVARAM', 'JAGGAMPETA', 'KAKINADA CITY', 'KAKINADA RURAL', 'KOTHAPETA', 'MANDAPETA', 'MUMMIDIVARAM', 'PEDDAPURAM', 'PITHAPURAM', 'PRATHIPADU', 'RAJAHMUNDRY CITY', 'RAJAMUNDRY RURAL', 'RAJANAGARAM', 'RAMACHANDRAPURAM', 'RAMPACHODAVARAM', 'RAZOLE', 'TUNI']
+
+guntur_constituency = ['BAPATLA', 'CHILAKALURIPET', 'GUNTUR EAST', 'GUNTUR WEST', 'GURAZALA', 'MACHERLA', 'MANGALAGIRI', 'NARASARAOPET', 'PEDAKURAPADU', 'PONNUR', 'PRATHIPADU (SC)', 'REPALLE', 'SATTENAPALLI', 'TADIKONDA (SC)', 'TENALI', 'VEMURU (SC)', 'VINUKONDA ']
+
+kadapa_constituency = ['BADVEL', 'JAMMALAMADUGU', 'KADAPA', 'KAMALAPURAM', 'KODUR', 'MYDUKUR', 'PRODDATUR', 'PULIVENDLA', 'RAJAMPET', 'RAYACHOTI ']
+
+krishna_constituency = ['AVANIGADDA', 'GANNAVARAM', 'GUDIVADA', 'JAGGAYYAPETA', 'KAIKALUR', 'MACHILIPATNAM', 'MYLAVARAM', 'NANDIGAMA', 'NUZVID', 'PAMARRU', 'PEDANA', 'PENAMALURU', 'TIRUVURU', 'VIJAYAWADA CENTRAL', 'VIJAYAWADA EAST', 'VIJAYWAD']
+
+kurnool_constituency = ['ADONI', 'ALLAGADDA', 'ALUR', 'BANAGANAPALLE', 'DHONE', 'KODUMUR', 'KURNOOL', 'MANTRALAYAM', 'NANDIKOTKUR', 'NANDYAL', 'PANYAM', 'PATTIKONDA', 'SRISAILAM', 'YEMMIGANUR']
+
+nellore_constituency = ['ATMAKUR', 'GUDUR', 'KAVALI', 'KOVUR', 'NELLORE CITY', 'NELLORE RURAL', 'SARVEPALLI', 'SULLURPETA', 'UDAYAGIRI', 'VENKATAGIRI']
+
+prakasam_constituency = ['ADDANKI', 'CHIRALA', 'DARSI', 'GIDDALUR', 'KANDUKUR', 'KANIGIRI', 'KONDAPI', 'MARKAPURAM', 'ONGOLE', 'PARCHUR', 'SANTHANUTHALAPADU', 'YERRAGONDAPALEM']
+
+
+srikakulam_constituency = ['AMADALAVALASA', 'ETCHERLA', 'ICHCHAPURAM', 'NARASANNAPETA', 'PALAKONDA', 'PALASA', 
+'PATHAPATNAM', 'RAJAM', 'SRIKAKULAM', 'TEKKALI']
+
+VISAKHAPATNAM_constituency = ['ANAKAPALLI', 'ARAKU VALLEY', 'BHIMLI', 'CHODAVARAM', 'GAJUWAKA', 'MADUGULA', 'NARSIPATNAM', 'PADERU', 'PAYAKARAOPETA', 'PENDURTHI', 'VISAKHAPATNAM EAST', 'VISAKHAPATNAM NORTH', 'VISAKHAPATNAM SOUTH', 'VISAKHAPATNAM WEST', 'YELAMANCHILI']
+
+VIZIANAGARAM_constituency = ['BOBBILI', 'CHEEPURUPALLE', 'GAJAPATHINAGARAM', 'KURUPAM', 'NELLIMARLA', 'PARVATHIPURAM', 'SALUR', 'SRUNGAVARAPUKOTA', 'VIZIANAGARAM']
+
+west godavari_constituency = ['ACHANTA', 'BHIMAVARAM', 'CHINTALAPUDI', 'DENDULURU', 'ELURU', 'GOPALAPURAM', 'KOVVUR', 'NARASAPURAM', 'NIDADAVOLE', 'PALACOLE', 'POLAVARAM', 'TADEPALLIGUDEM', 'TANUKU', 'UNDI', 'UNGUTURU']
+
+
+const anantapurConstList = document.querySelector('#anantapur_constituency-list');
+const chitoorConstList = document.querySelector('#chitoor_constituency-list');
+const eastGodavariConstList = document.querySelector('#east_godavari_constituency-list');
+const gunturConstList = document.querySelector('#guntur_constituency-list');
+const kadapaConstList = document.querySelector('#kadapa_constituency-list');
+const krishnaConstList = document.querySelector('#krishna_constituency-list');
+const kurnoolConstList = document.querySelector('#kurnool_constituency-list');
+const nelloreConstList = document.querySelector('#nellore_constituency-list');
+const prakasamConstList = document.querySelector('#prakasam_constituency-list');
+const srikakulamConstList = document.querySelector('#srikakulam_constituency-list');
+const vishakapatnamConstList = document.querySelector('#vishakhapatnam_constituency-list');
+const vizianagaramConstList = document.querySelector('#vizianagaram_constituency-list');
+const westGodavariConstList = document.querySelector('#west_godavari_constituency-list');
+
+
+
+
+
+
+
+
+
+
+
+anantapurConstList.style.display='none';
+chitoorConstList.style.display='none';
+eastGodavariConstList.style.display='none';
+gunturConstList.style.display='none';
+krishnaConstList.style.display='none';
+kurnoolConstList.style.display='none';
+nelloreConstList.style.display='none';
+prakasamConstList.style.display='none';
+srikakulamConstList.style.display='none';
+vishakapatnamConstList.style.display='none';
+vizianagaramConstList.style.display='none';
+westGodavariConstList.style.display='none';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     constituencies_list=['Constituency','Achanta', 'Addanki', 'Adoni', 'Allagadda', 'Alur', 'Amadalavalasa', 'Amalapuram', 'Anakapalle', 'Anantapur Urban',
+'Anaparthy', 'Araku Valley', 'Atmakur', 'Avanigadda', 'Badvel', 'Banaganapalle', 'Bapatla', 'Bhimavaram', 'Bhimili',
+'Bobbili', 'Chandragiri', 'Cheepurupalli', 'Chilakaluripet', 'Chintalapudi', 'Chirala', 'Chittoor', 'Chodavaram', 'Darsi', 'Denduluru', 'Dharmavaram', 'Dhone', 'Elamanchili', 'Eluru', 'Etcherla', 'Gajapathinagaram', 'Gajuwaka', 'Gangadhara Nellore', 'Gannavaram', 'Gannavaram', 'Giddalur', 'Gopalapuram', 'Gudivada', 'Gudur', 'Guntakal', 'Guntur East', 'Guntur West', 'Gurajala', 'Hindupur', 'Ichchapuram', 'Jaggampeta', 'Jaggayyapeta', 'Jammalamadugu', 'Kadapa', 'Kadiri', 'Kaikalur', 'Kakinada City', 'Kakinada Rural', 'Kalyandurg', 'Kamalapuram', 'Kandukur', 'Kanigiri', 'Kavali', 'Kodumur', 'Kodur', 'Kondapi', 'Kothapeta', 'Kovur', 'Kovvur', 'Kuppam', 'Kurnool', 'Kurupam', 'Macherla', 'Machilipatnam', 'Madakasira', 'Madanapalle', 'Madugula', 'Mandapeta', 'Mangalagiri', 'Mantralayam', 'Markapuram', 'Mummidivaram', 'Mydukur', 'Mylavaram', 'Nagari', 'Nandigama', 'Nandikotkur', 'Nandyal', 'Narasannapeta', 'Narasapuram', 'Narasaraopet', 'Narsipatnam', 'Nellimarla', 'Nellore City', 'Nellore Rural', 'Nidadavole', 'Nuzvid', 'Ongole', 'Paderu', 'Palakollu', 'Palakonda', 'Palamaner', 'Palasa', 'Pamarru', 'Panyam', 'Parchur', 'Parvathipuram', 'Pathapatnam', 'Pattikonda', 'Payakaraopet', 'Pedakurapadu', 'Pedana', 'Peddapuram', 'Penamaluru', 'Pendurthi', 'Penukonda', 'Pileru', 'Pithapuram', 'Polavaram', 'Ponnuru', 'Prathipadu', 'Prathipadu', 'Proddatur', 'Pulivendla', 'Punganur', 'Puthalapattu', 'Puttaparthi', 'Rajahmundry City', 'Rajahmundry Rural', 'Rajam', 'Rajampet', 'Rajanagaram', 'Ramachandrapuram', 'Rampachodavaram', 'Raptadu', 'Rayachoti', 'Rayadurg', 'Razole', 'Repalle', 'Salur', 'Santhanuthalapadu', 'Sarvepalli', 'Sathyavedu', 'Sattenapalle', 'Singanamala', 'Srikakulam', 'Srikalahasti', 'Srisailam', 'Srungavarapukota', 'Sullurpeta', 'Tadepalligudem', 'Tadikonda', 'Tadipatri', 'Tanuku', 'Tekkali', 'Tenali', 'Thamballapalle', 'Tirupati', 'Tiruvuru', 'Tuni', 'Udayagiri', 'Undi', 'Unguturu', 'Uravakonda', 'Vemuru', 'Venkatagiri', 'Vijayawada Central', 'Vijayawada East', 'Vijayawada West', 'Vinukonda', 'Visakhapatnam East', 'Visakhapatnam North', 'Visakhapatnam South', 'Visakhapatnam West', 'Vizianagaram', 'Yemmiganur', 'Yerragondapalem']
+
+
+
+
+     mandals_list=['Madal','Agali', 'Amadagur', 'Amarapuram', 'Anantapur', 'Atmakur', 'Bathalapalle', 'Beluguppa', 'Bommanahal', 'Brahmasamudram', 'Bukkapatnam', 'Bukkarayasamudram', 'Chenne Kothapalle', 'Chilamathur', 'D.Hirehal', 'Dharmavaram', 'Gandlapenta', 'Garladinne', 'Gooty', 'Gorantla', 'Gudibanda', 'Gummagatta', 'Guntakal', 'Hindupur', 'Kadiri', 'Kalyandurg', 'Kambadur', 'Kanaganapalle', 'Kanekal', 'Kothacheruvu', 'Kudair', 'Kundurpi', 'Lepakshi', 'Madakasira', 'Mudigubba', 'Nallacheruvu', 'Nallamada', 'Nambulapulakunta', 'Narpala', 'Obuladevaracheruvu', 'Pamidi', 'Parigi', 'Peddapappur', 'Peddavadugur', 'Penu Konda', 'Putlur', 'Puttaparthi', 'Ramagiri', 'Raptadu', 'Rayadurg', 'Roddam', 'Rolla', 'Settur', 'Singanamala', 'Somandepalle', 'Tadimarri', 'Tadpatri', 'Talupula', 'Tanakal', 'Uravakonda', 'Vajrakarur', 'Vidapanakal', 'Yadiki', 'Yellanur', 'B.Kothakota', 'Baireddipalle', 'Bangarupalem', 'Buchinaidu', 'khandriga', 'Chandragiri', 'Chinnagottigallu', 'Chittoor', 'Chowdepalle', 'Gangadhara nellore', 'Gangavaram', 'Gudipala', 'Gudupalle', 'Gurramkonda', 'Irala', 'K.V.B.Puram', 'Kalakada', 'Kalikiri', 'Kambhamvaripalle', 'Karvetinagar', 'Kuppam', 'Kurabalakota', 'Madanapalle', 'Mulakalacheruvu', 'Nagalapuram', 'Nagari', 'Narayanavanam', 'Nimmanapalle', 'Nindra', 'Pakala', 'Palamaner', 'Palasamudram', 'Peddamandyam', 'Peddapanjani', 'Peddathippasamudram', 'Penumuru', 'Pileru', 'Pitchatur', 'Pulicherla', 'Punganur', 'Puthalapattu', 'Puttur', 'Rama Chandrapuram', 'Ramakuppam', 'Ramasamudram', 'Renigunta', 'Rompicherla', 'Santhipuram', 'Satyavedu', 'Sodam', 'Somala', 'Srikalahasti', 'Srirangarajapuram', 'Thamballapalle', 'Thavanampalle', 'Thottambedu', 'Tirupati (rural)', 'Tirupati (urban)', 'Vadamalapeta', 'Varadaiahpalem', 'Vayalpadu', 'Vedurukuppam', 'Venkatagirikota', 'Vijayapuram', 'Yadamari', 'Yerpedu', 'Yerravaripalem', 'Atlur', 'B.Kodur', 'Badvel', 'Brahmamgarimatham', 'Chakrayapet', 'Chapadu', 'Chennur', 'Chinnamandem', 'Chinthakomma', 'Dinne', 'Chitvel', 'Duvvur', 'Galiveedu', 'Gopavaram', 'Jammalamadugu', 'Kadapa', 'Kalasapadu', 'Kamalapuram', 'Khajipet', 'Koduru', 'Kondapuram', 'Lakkireddipalle', 'Lingala', 'Muddanur', 'Mydukur', 'Mylavaram', 'Nandalur', 'Obulavaripalle', 'Peddamudium', 'Penagalur', 'Pendlimarri', 'Porumamilla', 'Proddatur', 'Pulivendula', 'Pullampeta', 'Rajampet', 'Rajupalem, Kadapa', 'Ramapuram', 'Rayachoti', 'Sambepalle', 'Sidhout', 'Simhadripuram', 'Sri Avadhuth Kasinayana', 'T.Sundupalle', 'Thondur', 'Vallur', 'Veeraballi', 'Veerapanayani Palle', 'Vempalle', 'Vemula', 'Vontimitta', 'Yerraguntla', 'Amalapuram', 'Addateegala', 'Ainavilli', 'Alamuru', 'Allavaram', 'Ambajipeta', 'Anaparti', 'Atreyapuram', 'Biccavolu', 'Chinturu', 'Devipatnam', 'Gandepalle', 'Gangavaram', 'Gokavaram', 'Gollaprolu', 'I.Polavaram', 'Jaggampeta', 'Kadiam', 'Kajuluru', 'Kakinada (rural)', 'Kakinada (urban)', 'Kapileswarapuram', 'Karapa', 'Katrenikona', 'Kirlampudi', 'Korukonda', 'Kotananduru', 'Kothapalle', 'Kothapeta', 'Kunavaram', 'Malikipuram', 'Mandapeta', 'Maredumilli', 'Mummidivaram', 'Manidikurru', 'Nellipaka', 'P.Gannavaram', 'Pamarru', 'Pedapudi', 'Peddapuram', 'Pithapuram', 'Prathipadu', 'Rajahmundry (rural)', 'Rajahmundry (urban))', 'Rajanagaram', 'Rajavommangi', 'Ramachandrapuram', 'Rampachodavaram', 'Rangampeta', 'Ravulapalem', 'Rayavaram', 'Razole', 'Rowthulapudi', 'Sakhinetipalli', 'Samalkota', 'Sankhavaram', 'Seethanagaram', 'Thallarevu', 'Thondangi', 'Tuni', 'Uppalaguptam', 'Vararamachandrapuram', 'Y.Ramavaram', 'Yeleswaram', 'Amaravati', 'Amruthalur', 'Achampet', 'Bapatla', 'Bhattiprolu', 'Bellamkonda', 'Bollapalle', 'Chebrole', 'Cherukupalle', 'Chilakaluripet', 'Duggirala', 'Dachepalle', 'Durgi', 'Edlapadu', 'Ipur', 'Guntur', 'Gurazala', 'karlapalem', 'Kakumanu', 'karempudi', 'Kollipara', 'Kolluru', 'Krosuru', 'Machavaram', 'Macherla', 'Mangalagiri', 'Medikonduru', 'Muppalla', 'Nadendla', 'Nagaram', 'Nekarikallu', 'Narasaraopet', 'Nizampatnam', 'Nuzendla', 'Pedakakani', 'Pedakurapadu', 'pedanandipadu', 'Phirangipuram', 'Piduguralla', 'Pittalavanipalem', 'Ponnur', 'Prathipadu', 'Rajupalem', 'Rentachintala', 'Repalle', 'Rompicherla', 'Sattenapalli', 'Savalyapuram', 'Tadikonda', 'Tenali', 'Tadepalle', 'Thulluru', 'Tsunduru', 'Vatticherukuru', 'Veldurthi', 'Vemuru', 'Vinukonda', 'A.Konduru', 'Agiripalli', 'Avanigadda', 'Bantumilli', 'Bapulapadu', 'Challapalli', 'Chandarlapadu', 'Chatrai', 'G.Konduru', 'Gampalagudem', 'Gannavaram', 'Ghantasala', 'Gudivada', 'Gudlavalleru', 'Guduru', 'Ibrahimpatnam', 'Jaggayyapeta', 'Kaikalur', 'Kalidindi', 'Kanchikacherlal', 'Kankipadu', 'Koduru', 'Kruthivennu', 'Machilipatnam', 'Mandavalli', 'Mopidevi', 'Movva', 'Mudinepalli', 'Musunuru', 'Mylavaram', 'Nagayalanka', 'Nandigama', 'Nandivada', 'Nuzvid', 'Pamarru', 'Pamidimukkala', 'Pedana', 'Pedaparupudi', 'Penamaluru', 'Penuganchiprolu', 'Reddigudem', 'Thotlavalluru', 'Tiruvuru', 'Unguturu', 'Vatsavai', 'Veerullapadu', 'Vijayawada (Rural)', 'Vijayawada East', 'Vijayawada Central', 'Vijayawada North', 'Vijayawada West.[8]', 'Vissannapeta', 'Vuyyuru', 'Adoni', 'Allagadda', 'Alur', 'Aspari', 'Atmakur', 'Banaganapalle', 'Bandi Atmakur', 'Bethamcherla', 'C.Belagal', 'Chagalamarri', 'Chippagiri', 'Devanakonda', 'DhoneÂ\xa0aliasÂ\xa0Dronachalam', 'Dornipadu', 'Gadivemula', 'Gonegandla',
+'Gospadu', 'Gudur', 'Halaharvi', 'Holagunda', 'Jupadu Bungalow', 'Kallur', 'Kodumuru', 'Koilkuntla', 'Kolimigundla',
+'Kosigi', 'Kothapalle', 'Kowthalam', 'Krishnagiri', 'Kurnool Rural', 'Kurnool Urban', 'MaddikeraÂ\xa0(East)', 'Mahanandi', 'Mantralayam', 'Miduthur', 'Nandavaram', 'Nandikotkur', 'Nandyal', 'Orvakal', 'Owk', 'Pagidyala', 'Pamulapadu', 'Panyam', 'Pattikonda', 'Peapally', 'Pedda Kadubur', 'Rudravaram', 'Sanjamala', 'Sirvel', 'Srisailam', 'Tuggali', 'Uyyalawada', 'Veldurthi', 'Velgodu', 'Yemmiganur.', 'Allur', 'Ananthasagaram', 'Anumasamudrampeta', 'Atmakur', 'Balayapalle', 'Bhogolu', 'Buchireddypalem', 'Chejerla', 'Chillakur', 'Chittamur', 'Dagadarthi', 'Dakkili', 'Doravarisatram', 'Duttalur', 'Gudur', 'Indukurpet', 'Jaladanki', 'Kaligiri', 'Kaluvoya', 'Kavali', 'Kodavalur', 'Kondapuram', 'Kota', 'Kovur', 'Manubolu', 'Marripadu', 'Muthukur', 'Naidupeta', 'Nellore Rural', 'Nellore Urban', 'Ozili', 'Pellakur', 'Podlakur', 'Rapur', 'Seetharamapuram', 'Sangam', 'Sullurpeta', 'Sydapuram', 'Tada', 'Thotapalligudur', 'Udayagiri', 'Vakadu', 'Varikuntapadu', 'Venkatachalam', 'Vinjamur', 'Venkatagiri', 'Vidavalur', 'Addanki', 'Ardhaveedu', 'Ballikuruva', 'Bestavaripeta', 'Chinaganjam', 'Chandrasekharapuram', 'Chimakurthi', 'Chirala', 'Cumbum', 'Darsi', 'Donakonda', 'Dornala', 'Giddaluru', 'Gudluru', 'Hanumanthunipadu', 'Inkollu', 'Janakavaram Panguluru', 'Kandukur', 'Karamchedu', 'Komarolu', 'Kanigiri', 'Konakanamitla', 'Kondapi', 'Korisapadu', 'Kothapatnam', 'Kurichedu', 'Lingasamudram', 'Maddipadu', 'Markapur', 'Marripudi', 'Martur', 'Mundlamuru', 'Naguluppalapadu', 'Ongole', 'Pamur', 'Parchur', 'Pedaaraveedu', 'Pedacherlopalle', 'Podili', 'Ponnaluru', 'Pullalacheruvu', 'Santhamaguluru', 'Santhanuthlapadu', 'Singarayakonda', 'Racherla', 'Tangutur', 'Tarlupadu', 'Thallur', 'Tripuranthakam', 'Ulavapadu', 'Veligandla', 'Vetapalem', 'Voletivaripalem', 'Yeddanapudi', 'Yerragondapalem', 'Zarugumilli', 'Amadalavalasa', 'Bhamini', 'Burja', 'Etcherla', 'Gara', 'Ganguvari Sigadam', 'Hiramandalam', 'Ichchapuram', 'Jalumuru', 'Kanchili', 'Kaviti', 'Kotabommali', 'Kothuru(Srikakulam)', 'Lakshminarasupeta', 'Laveru', 'Mandasa', 'Meliaputti', 'Nandigam', 'Narasannapeta', 'Palakonda', 'Palasa',
+'Pathapatnam', 'Polaki', 'Ponduru', 'Rajam', 'Ranastalam', 'Regidi Amadalavalasa', 'Santhabommali', 'Santhakavati', 'Saravakota', 'Sarubujjili', 'Seethampeta', 'Sompeta', 'Srikakulam', 'Tekkali', 'Vajrapu Kotturu', 'Vangara', 'Veeraghattam', 'Anakapalli', 'Anandapuram', 'Ananthagiri', 'Araku Valley', 'Atchutapuram', 'Bheemunipatnam', 'Butchayyapeta', 'Cheedikada', 'Chintapalle', 'Chodavaram', 'Devarapalle', 'Dumbriguda', 'G.Madugula', 'GajuwakaÂ\xa0(Urban)', 'Golugonda', 'Gudem Kotha Veedhi', 'Hukumpeta', 'K.Kotapadu', 'Kasimkota', 'Kotauratla', 'Koyyuru', 'Madugula', 'Makavarapalem', 'Munagapaka', 'Munchingiputtu', 'Nakkapalli', 'Narsipatnam', 'Nathavaram', 'Paderu', 'Padmanabham', 'Paravada', 'Payakaraopeta', 'Pedabayalu', 'Pedagantyada', 'Pendurthi', 'Rambilli', 'Ravikamatham', 'Rolugunta', 'S.Rayavaram', 'Sabbavaram', 'Visakhapatnam (Rural)Chinna Gadhili', 'Seethammadhara', 'Gopalapatnam', 'Maharanipeta', 'Mulagada.[14]', 'Yelamanchili', 'Bhogapuram', 'Badangi', 'Bondapalli', 'Balijipeta', 'Bobbili', 'Cheepurupalli', 'Dattirajeru', 'Denkada', 'Gajapathinagaram', 'Gantyada', 'Garividi', 'Gurla', 'Garugubilli', 'Gummalaxmipuram', 'Jami', 'Jiyyammavalasa', 'Komarada', 'Kothavalasa', 'Kurupam', 'Lakkavarapukota', 'Makkuva', 'Mentada', 'Merakamudidam', 'Nellimarla', 'Pachipenta', 'Parvathipuram', 'Pusapatirega', 'Ramabhadrapuram', 'Salur', 'Seethanagaram', 'Srungavarapukota', 'Therlam', 'Vepada', 'Vizianagaram', 'Attili', 'Akiveedu', 'Achanta', 'Buttayagudem', 'Bhimavaram', 'Bhimadole', 'Chagallu', 'Chintalapudi', 'Devarapalle', 'Denduluru', 'Dwarakatirumala', 'Eluru', 'Gopalapuram', 'Ganapavaram', 'Iragavaram', 'Jeelugumilli', 'Jangareddigudem', 'Kamavarapukota', 'Kovvur', 'Kukkunoor', 'Kalla', 'Koyyalagudem', 'Lingapalem', 'Mogalthur', 'Narasapuram', 'Nallajarla', 'Nidadavole', 'Nidamarru', 'Polavaram', 'Pedavegi', 'Pedapadu', 'Pentapadu', 'Peravali', 'Poduru', 'Palakoderu', 'Penumantra', 'Penugonda', 'Palakollu', 'Thallapudi', 'T.Narasapuram', 'Tadepalligudem', 'Tanuku', 'Undrajavaram', 'Unguturu', 'Undi', 'Veeravasaram', 'Yelamanchili', 'Velerupadu']

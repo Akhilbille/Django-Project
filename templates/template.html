@@ -1,0 +1,118 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <script src="https://kit.fontawesome.com/a1f3682286.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="{% static 'css/template-style.css'%}">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+<style>
+    .content{
+        font-size: 1rem;
+        margin: 0.5rem;
+        text-align: left;
+    }
+
+</style>
+
+    <title>{% block title %} {% endblock %}</title>
+</head>
+<body>
+<div class="w3-sidebar  w3-bar-block w3-collapse w3-card w3-animate-left" style="width:200px;font-size: 1.2rem;background-color: black" id="mySidebar" >
+
+    <button class="w3-bar-item w3-button  w3-large w3-hide-large" onclick="w3_close()"> <span style="font-weight: bold; color: blue;font-size: 20px">Close <i class="fas fa-window-close"></i> </span> </button>
+      <div class="sidebar">
+    <div class="logo-details">
+      <i class='{{side_bar.con_name}}'></i>
+        <div class="logo_name"><h4 style="font-weight: bold;color: white">Hello <span style="color: gold">{{user.first_name|title}}</span></h4></div>
+        <i class='bx bx-menu' id="btn" ></i>
+    </div>
+          {% for side_bar in side_bars%}
+
+        <a href="/home/{{side_bar.side_bar_name|slugify}}" style="color: white;text-decoration: none;border-bottom: 1px solid white" class="w3-bar-item w3-button"> {{side_bar.side_bar_name}}</a>
+
+          {% endfor %}
+    </div>
+<div>
+     <a href="/home/logout" class="w3-bar-item w3-button"style="text-decoration: none" ><span style="font-weight: bold; color: gold;">Logout  <i class="fas fa-sign-out-alt"></i> </span> </a>
+</div>
+</div>
+<div class="w3-main" style="margin-left:200px">
+
+
+{#Content#}
+    <div >
+  <button class="w3-button  w3-xlarge  w3-hide-large" onclick="w3_open()"><span style="color: blue; "><i class="fas fa-bars"></i></span></button>
+  <div class="w3-container" style="text-align: center;" id="side_bar_view;">
+    <div style="text-align: left;margin: 1rem">
+
+<div class="main" style="width: 82vw;margin-left: -1rem;text-align: justify">
+
+
+            {% block content %}
+
+             {%  endblock %}
+
+</div>
+
+    </div>
+    </div>
+</div>
+<div style="text-align: right;font-size: 30px;color:#0dcaf0">
+    <a href="#top" style="margin: 1rem"><i class="fas fa-arrow-circle-up"></i></a>
+</div>
+</div>
+<!-- Content -->
+
+<script>
+function w3_open() {
+  document.getElementById("mySidebar").style.display = "block";
+}
+
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+}
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</body>
+</html>

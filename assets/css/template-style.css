@@ -1,0 +1,46 @@
+body{
+    background-color: lightgrey;
+}
+h1{
+    font-family: "Open Sans", sans-serif;
+    color:blue;
+    text-align: center;
+}
+@media (min-width: 900px){
+    .main{
+    padding: 2rem;
+    margin: 3rem;
+    background-color: lightgray;
+    border-radius: 10px;
+    box-shadow: 0 0 20px grey;
+}
+}
+.main{
+    padding: 1.5rem;
+    margin: 1.5rem;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 15px grey;
+}
+
+h3{
+    color:dodgerblue;
+
+    font-family: Verdana;
+
+}
+
+p{
+    margin: 1rem 3rem;
+    color: black;
+    font-size: 1.2rem;
+}
+a{
+    text-decoration: none;
+}
+
+li{
+    list-style: disc;
+    color: blue;
+
+}

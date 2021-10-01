@@ -1,0 +1,10 @@
+.main{
+    background-color: whitesmoke;
+}
+
+.main-sub{
+    margin: 2rem;
+    box-shadow: 0 30px grey;
+    width:500px;
+    height: 100vh;
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Home </title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://kit.fontawesome.com/a1f3682286.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+<body>
+
+<div class="w3-sidebar w3-whitesmoke w3-bar-block w3-collapse w3-card w3-animate-left" style="width:200px;font-size: 1.2rem;" id="mySidebar" >
+
+    <button class="w3-bar-item w3-button  w3-large w3-hide-large" onclick="w3_close()"> <span style="font-weight: bold; color: blue;">Close <i class="fas fa-times"></i> </span> </button>
+
+
+  <a href="#" class="w3-bar-item w3-button">Link 2</a>
+  <a href="#" class="w3-bar-item w3-button">Link 3</a>
+</div>
+
+<div class="w3-main" style="margin-left:200px">
+<div>
+  <button class="w3-button  w3-xlarge w3-hide-large" onclick="w3_open()"><span style="color: blue;"><i class="fas fa-bars"></i></span></button>
+  <div class="w3-container" style="text-align: center;" id="side_bar_view">
+    <h1>My Page</h1>
+  </div>
+</div>
+<!-- Content -->
+
+<script>
+function w3_open() {
+  document.getElementById("mySidebar").style.display = "block";
+}
+
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+}
+</script>
+</div>
+</body>
+</html>

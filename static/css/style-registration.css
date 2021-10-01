@@ -1,0 +1,89 @@
+body{
+    background-color:lightgray;
+}
+
+
+.main-box{
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+.sub-main-box1{
+    width:50vw;
+    height: 50vh;
+    background-color: #007bff;
+    border-radius: 20px;
+
+    background: rgb(34,193,195);
+    background: linear-gradient(180deg, rgba(34,193,195,1) 0%, rgba(255,255,255,1) 63%);
+}
+
+.tick{
+    margin-top: 1rem;
+    text-align: center;
+}
+.tick-icon{
+    color: white;
+   font-size: 8rem;
+
+}
+.info{
+    font-style: italic;
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+button{
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: rgb(34,193,195);
+    color: white;
+    font-weight: bold;
+    height: 2.5rem;
+    width: 8rem;
+
+}
+button:hover{
+    background-color:teal;
+}
+
+@media screen  and (max-width:600px){
+    .sub-main-box1{
+        width:70vw;
+        height: 50vh;
+
+        border-radius: 20px;
+
+        background: dodgerblue;
+        background: linear-gradient(180deg, rgba(34,193,195,1) 0%, rgba(255,255,255,1) 63%);
+    }
+
+    .info{
+        font-style: italic;
+        font-weight: bold;
+        font-size: 1rem;
+    }
+    .tick-icon{
+        margin-top: 2rem;
+        color: white;
+       font-size: 5rem;
+
+    }
+    button{
+        margin-top: 1rem;
+        border: 1px solid black;
+        border-radius: 5px;
+        background-color: rgb(34,193,195);
+        color: white;
+        font-weight: bold;
+        height: 1.5rem;
+        width: 6rem;
+
+    }
+}
